@@ -1,0 +1,17 @@
+/* Some of the padding is best dispatched with */
+#menu #menu-item-n-login{
+float:left;
+}
+#menu #menu-item-n-login-register{ 
+float:left;
+}
+#container,
+#header,
+#footer-wrap-inner,
+.message {
+	width: 100%;
+}
+
+#content {
+	padding: 1em 2em 0em;
+}
