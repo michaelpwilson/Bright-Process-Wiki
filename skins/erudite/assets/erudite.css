@@ -245,13 +245,16 @@ a.new {
 
 .footer {
 	float: left;
-	width: 25%;
-	margin-left: 5%;
+	width: 100%;
+	margin-left: 0;
 }
 
 .footer li {
 	list-style: none;
 	margin: 0em;
+	display:inline;
+	padding-left:20px;
+	padding-right:20px;
 }
 
 .footer ul {

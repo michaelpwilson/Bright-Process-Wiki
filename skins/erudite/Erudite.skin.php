@@ -310,16 +310,6 @@ if(!$this->data['loggedin']) {
 				<div id="bodyContent" class="entry-content">
 				<?php $this->html( 'bodytext' ) ?>
 <?php $this->html( 'dataAfterContent' ); ?>
-                <div id="secondary" class="footer" style="float:right;">
-                                <h3><?php $this->msg( 'toolbox' ) ?></h3>
-                                <?php
-                                        foreach ( $this->getToolbox() as $key => $tbitem ) {
-                                                echo $this->makeListItem( $key, $tbitem );
-                                        }
-                                        wfRunHooks( 'SkinTemplateToolboxEnd', array( &$this ) );
-                                ?>
-                                <?php echo $this->msgWikiNoEdit( 'erudite-extracontent-column2' ); ?>
-                </div>  
 			<div id="footer">
 				<?php
 					foreach ( $this->getFooterLinks() as $category => $links ) {
@@ -353,13 +343,21 @@ if(!$this->data['loggedin']) {
 			<?php } ?>
 				<?php echo $this->msgWikiNoEdit( 'erudite-extracontent-column1' ); ?>
 
+               <div id="secondary" class="footer">
+                                <h3><?php $this->msg( 'toolbox' ) ?></h3>
+                                <?php
+                                        foreach ( $this->getToolbox() as $key => $tbitem ) {
+                                                echo $this->makeListItem( $key, $tbitem );
+                                        }
+                                        wfRunHooks( 'SkinTemplateToolboxEnd', array( &$this ) );
+                                ?>
+                                <?php echo $this->msgWikiNoEdit( 'erudite-extracontent-column2' ); ?>
+                </div>  
 		</div>
 		<div class="visualClear"></div>
-
 		</div>
 		</div>
 		<!-- /footer -->
-
                 </div>
                 <!-- /content -->
 

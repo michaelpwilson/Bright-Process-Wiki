@@ -19,7 +19,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 # $wgDisableOutputCompression = true;
 
 $wgSitename = "Bright Process";
-$wgMetaNamespace = "Project";
+$wgMetaNamespace = "Bright_Process";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -30,7 +30,7 @@ $wgScriptPath = "/mediawiki";
 $wgScriptExtension = ".php";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://162.243.83.127";
+$wgServer = "http://bp-wiki-01.dmz-app.localdomain";
 
 ## The relative URL path to the skins directory
 $wgStylePath = "$wgScriptPath/skins";
@@ -42,13 +42,13 @@ $wgLogo             = "$wgStylePath/common/images/trademark-logo.png";
 ## UPO means: this is also a user preference option
 
 $wgEnableEmail = true;
-$wgEnableUserEmail = false; # UPO
+$wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = "apache@162.243.83.127";
-$wgPasswordSender = "apache@162.243.83.127";
+$wgEmergencyContact = "apache@bp-wiki-01.dmz-app.localdomain";
+$wgPasswordSender = "apache@bp-wiki-01.dmz-app.localdomain";
 
-$wgEnotifUserTalk = false; # UPO
-$wgEnotifWatchlist = false; # UPO
+$wgEnotifUserTalk = true; # UPO
+$wgEnotifWatchlist = true; # UPO
 $wgEmailAuthentication = true;
 
 ## Database settings
@@ -62,18 +62,18 @@ $wgDBpassword = "Bergun21";
 $wgDBprefix = "bpwiki_";
 
 # MySQL table options to use during installation or update
-$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=utf8";
+$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 
 # Experimental charset support for MySQL 5.0.
 $wgDBmysql5 = false;
 
 ## Shared memory settings
-$wgMainCacheType = CACHE_NONE;
+$wgMainCacheType = CACHE_ACCEL;
 $wgMemCachedServers = array();
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
-$wgEnableUploads = true;
+$wgEnableUploads = false;
 $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
 
@@ -99,24 +99,24 @@ $wgShellLocale = "en_US.utf8";
 # Site language code, should be one of the list in ./languages/Names.php
 $wgLanguageCode = "en-gb";
 
-$wgSecretKey = "39117ddd8bcf6c213af3d74682723a83c7fb5bee389d71651a460c0ca9656202";
+$wgSecretKey = "0f6811ec0451bc53c0a423046dc98e049a8e701de582cf6a51ea79112ff1e379";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "cec758722cc7715a";
+$wgUpgradeKey = "53b589d94212554e";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'standard', 'nostalgia', 'cologneblue', 'monobook', 'vector':
-require_once( "$IP/skins/erudite/erudite.php" );
 $wgDefaultSkin = "erudite";
+require_once( "$IP/skins/erudite/erudite.php" );
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
 ## License and Creative Commons licenses are supported so far.
 $wgRightsPage = ""; # Set to the title of a wiki page that describes your license/copyright
-$wgRightsUrl = "";
-$wgRightsText = "";
-$wgRightsIcon = "";
+$wgRightsUrl = "http://www.gnu.org/copyleft/fdl.html";
+$wgRightsText = "GNU Free Documentation License 1.3 or later";
+$wgRightsIcon = "{$wgStylePath}/common/images/gnu-fdl.png";
 
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
@@ -134,11 +134,10 @@ $wgGroupPermissions['*']['edit'] = false;
 # Enabled Extensions. Most extensions are enabled by including the base extension file here
 # but check specific extension documentation for more details
 # The following extensions were automatically enabled:
-require_once( "$IP/extensions/ParserFunctions/ParserFunctions.php" );
+require_once( "$IP/extensions/PdfHandler/PdfHandler.php" );
 require_once( "$IP/extensions/SimpleAntiSpam/SimpleAntiSpam.php" );
-require_once( "$IP/extensions/SpamBlacklist/SpamBlacklist.php" );
 require_once( "$IP/extensions/WikiEditor/WikiEditor.php" );
-require_once "$IP/extensions/ConfirmAccount/ConfirmAccount.php";
+
 
 # End of automatically generated settings.
 # Add more configuration options below.
